@@ -1,9 +1,11 @@
-import React from 'react'
-import { BrowserRouter, Routes } from 'react-router'
-import Navbar from './Components/Navbar'
-import Home from './Pages/Home'
+import { useState } from 'react'
+import './App.css'
+import Navbar from "./components/Navbar/Navbar";
 
-const App = () => {
+function App(){
+  const [count, setCount] = useState(0)
+
+const App = () => { 
   return (
     <>
 
@@ -27,4 +29,6 @@ const App = () => {
   )
 }
 
+
+} 
 export default App
