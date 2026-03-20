@@ -1,11 +1,262 @@
-.hero-section {   
-    background-image: url('../src/assets/LandingImg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #111;
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.95);
+  padding: 12px 0;
+}
+
+.brand-logo {
+  color: #f5b041 !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.nav-links a {
+  color: #fff !important;
+  margin-left: 14px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f5b041 !important;
+}
+
+.section-gap {
+  padding: 90px 0;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+}
+
+.top-badge {
+  display: inline-block;
+  background: rgba(245, 176, 65, 0.15);
+  color: #f5b041;
+  padding: 8px 16px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.hero-text {
+  color: #ddd;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  margin: 20px 0 30px;
+}
+
+.hero-image {
+  border-radius: 22px;
+  box-shadow: 0 14px 32px rgba(245, 176, 65, 0.2);
+}
+
+.about-section,
+.contact-section,
+.testimonial-section {
+  background: #181818;
+}
+
+.about-image {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(245, 176, 65, 0.15);
+}
+
+.section-title {
+  font-size: 2.4rem;
+  color: #f5b041;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.section-subtitle {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.section-text {
+  color: #ddd;
+  line-height: 1.9;
+}
+
+.feature-card,
+.service-card,
+.package-card,
+.testimonial-card {
+  background: #222;
+  border: none;
+  color: #fff;
+  border-radius: 18px;
+  transition: 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.feature-card:hover,
+.service-card:hover,
+.package-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 30px rgba(245, 176, 65, 0.15);
+}
+
+.feature-card .card-body,
+.package-card .card-body,
+.testimonial-card .card-body {
+  padding: 30px 20px;
+}
+
+.feature-icon {
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+}
+
+.stats-section {
+  background: #101010;
+}
+
+.stats-section h2 {
+  color: #f5b041;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.stats-section p {
+  color: #ddd;
+  margin-top: 10px;
+}
+
+.service-img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+}
+
+.process-section {
+  background: linear-gradient(to right, #151515, #0f0f0f);
+}
+
+.process-box {
+  background: #1f1f1f;
+  padding: 30px 20px;
+  border-radius: 18px;
+  text-align: center;
+  height: 100%;
+  transition: 0.4s ease;
+}
+
+.process-box:hover {
+  transform: translateY(-10px);
+}
+
+.process-box span {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: #f5b041;
+  color: #111;
+  border-radius: 50%;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.packages-section {
+  background: #111;
+}
+
+.price {
+  color: #f5b041;
+  margin: 20px 0;
+  font-size: 2.3rem;
+}
+
+.package-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.package-list li {
+  padding: 8px 0;
+  color: #ddd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #f5b041, #d68910);
+  color: #111;
+}
+
+.cta-section h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+
+.cta-section p {
+  font-size: 1.05rem;
+  margin: 20px 0;
+}
+
+.contact-box {
+  background: #222;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.footer-section {
+  background: #000;
+  color: #aaa;
+  padding: 22px 0;
+}
+
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-buttons .btn {
+    margin-bottom: 10px;
+  }
+
+  .about-image {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .section-gap {
+    padding: 70px 0;
+  }
+
+  .service-img {
+    height: 220px;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
 }
