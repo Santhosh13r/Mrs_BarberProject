@@ -134,7 +134,8 @@ function App() {
       <section id="about" className="about-section section-gap">
         <Container>
           <Row className="align-items-center">
-            <Col lg={6} data-aos="zoom-in">
+            
+            <Col lg={6} className="text-center d-flex justify-content-center" data-aos="zoom-in">
               <img src={AboutImg} alt="About MisterBarber" className="about-image img-fluid" />
             </Col>
             <Col lg={6} data-aos="fade-up">
