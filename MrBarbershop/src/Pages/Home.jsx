@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import CountUp from "react-countup";
 import {
   Navbar,
   Nav,
@@ -47,7 +48,7 @@ function App() {
   const packages = [
     {
       title: "Basic Grooming",
-      price: "₹299",
+      price: "₹180",
       items: ["Hair Cut", "Basic Beard Trim", "Hair Wash"],
     },
     {
@@ -94,6 +95,7 @@ function App() {
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#services">Services</Nav.Link>
               <Nav.Link href="#contact">Contact</Nav.Link>
+              <Nav.Link href="#Appoiment">Appoiment</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -104,7 +106,7 @@ function App() {
           <Row className="align-items-center min-vh-100">
             <Col lg={6} data-aos="fade-right">
               <span className="top-badge">Premium Men’s Grooming Salon</span>
-              <h1 className="hero-title">
+              <h1 className="hero-title text-light">
                 Look Sharp, Feel Confident, <br /> Stay Stylish
               </h1>
               <p className="hero-text">
@@ -211,28 +213,33 @@ function App() {
       </section>
 
       {/* Stats */}
-      <section className="stats-section section-gap">
-        <Container>
-          <Row className="text-center">
-            <Col md={3} col={6} data-aos="zoom-in">
-              <h2>10+</h2>
-              <p>Years Experience</p>
-            </Col>
-            <Col md={3} col={6} data-aos="zoom-in" data-aos-delay="100">
-              <h2>5000+</h2>
-              <p>Happy Clients</p>
-            </Col>
-            <Col md={3} col={6} data-aos="zoom-in" data-aos-delay="200">
-              <h2>15+</h2>
-              <p>Professional Services</p>
-            </Col>
-            <Col md={3} col={6} data-aos="zoom-in" data-aos-delay="300">
-              <h2>4.9★</h2>
-              <p>Customer Rating</p>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+       <section className="stats-section section-gap">
+  <Container>
+    <Row className="text-center">
+
+      <Col md={3} xs={6}>
+        {/* <CountUp end={10} duration={3} /> */} <h1>10+</h1>
+        <p>Years Experience</p>
+      </Col>
+
+      <Col md={3} xs={6}>
+        {/* <CountUp end={5000} duration={3} /> */} <h1>5,000+</h1>
+        <p>Happy Clients</p>
+      </Col>
+
+      <Col md={3} xs={6}>
+        {/* <CountUp end={15}  duration={3}/> */} <h1>15+</h1>
+        <p>Professional Services</p>
+      </Col>
+
+      <Col md={3} xs={6}>
+        {/* <CountUp end={4.9} decimals={1} duration={3} /> */} <h1>4.9/5</h1>
+        <p>Average Rating</p>
+      </Col>
+
+    </Row>
+  </Container>
+       </section>
 
       {/* Services */}
       <section id="services" className="services-section section-gap">
@@ -364,7 +371,7 @@ function App() {
                 from experienced professionals.
               </p>
               <Button variant="warning" size="lg">
-                Book Your Appointment
+                Book Your Appointment coming soon
               </Button>
             </Col>
           </Row>
@@ -381,12 +388,12 @@ function App() {
                 We are here to help you get the best look. Reach out to us for
                 bookings, service details, or general inquiries.
               </p>
-              <p>📍 Salem, Tamil Nadu</p>
-              <p>📞 +91 98765 43210</p>
-              <p>📧 info@misterbarber.com</p>
+              <p className="text-light">📍 Papanasam ,Kumbakonam Tk</p>
+              <p className="text-light">📞 +91 73589 77551</p>
+              <p className="text-light">📧 info@misterbarber.com</p>
             </Col>
             <Col md={6} data-aos="fade-left">
-              <div className="contact-box">
+              <div className="contact-box mt-4 mt-md-0">
                 <h4>Opening Hours</h4>
                 <p>Monday - Friday: 9:00 AM - 9:00 PM</p>
                 <p>Saturday - Sunday: 8:00 AM - 10:00 PM</p>
