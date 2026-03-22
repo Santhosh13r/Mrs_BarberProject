@@ -147,19 +147,32 @@ body {
 
 .process-section {
   background: linear-gradient(to right, #151515, #0f0f0f);
+  justify-self: space-between;
 }
 
 .process-box {
-  background: #1f1f1f;
+  background: #181717;
   padding: 30px 20px;
   border-radius: 18px;
   text-align: center;
   height: 100%;
   transition: 0.4s ease;
+  justify-content: space-between;
 }
 
 .process-box:hover {
   transform: translateY(-10px);
+  background-color: rgb(51, 49, 49);
+}
+.process-box h5 {
+  color: #f7f7f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100; 
+}
+.process-box p {
+  color: #ddd;
+  margin-top: 12px;
+  font-size: 0.95rem;
 }
 
 .process-box span {
@@ -168,7 +181,7 @@ body {
   height: 60px;
   line-height: 60px;
   background: #f5b041;
-  color: #111;
+  color: #fbf5f5;
   border-radius: 50%;
   font-weight: 700;
   margin-bottom: 15px;
@@ -193,7 +206,7 @@ body {
 
 .package-list li {
   padding: 8px 0;
-  color: #ddd;
+  color: #060606;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -213,15 +226,15 @@ body {
 }
 
 .contact-box {
-  background: #222;
+  background: #bcb6b6;
   padding: 30px;
   border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(85, 84, 84, 0.35);
 }
 
 .footer-section {
   background: #000;
-  color: #aaa;
+  color: #f7f7f7;
   padding: 22px 0;
 }
 

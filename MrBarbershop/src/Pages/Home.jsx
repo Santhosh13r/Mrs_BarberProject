@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import {CounterBox } from "react-countup";
 import {
   Navbar,
   Nav,
@@ -94,6 +95,7 @@ function App() {
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#services">Services</Nav.Link>
               <Nav.Link href="#contact">Contact</Nav.Link>
+              <Nav.Link href="#Appoiment">Appoiment</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -211,28 +213,33 @@ function App() {
       </section>
 
       {/* Stats */}
-      <section className="stats-section section-gap">
-        <Container>
-          <Row className="text-center">
-            <Col md={3} col={6} data-aos="zoom-in">
-              <h2>10+</h2>
-              <p>Years Experience</p>
-            </Col>
-            <Col md={3} col={6} data-aos="zoom-in" data-aos-delay="100">
-              <h2>5000+</h2>
-              <p>Happy Clients</p>
-            </Col>
-            <Col md={3} col={6} data-aos="zoom-in" data-aos-delay="200">
-              <h2>15+</h2>
-              <p>Professional Services</p>
-            </Col>
-            <Col md={3} col={6} data-aos="zoom-in" data-aos-delay="300">
-              <h2>4.9★</h2>
-              <p>Customer Rating</p>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+ <section className="stats-section section-gap">
+  <Container>
+    <Row className="text-center">
+
+      <Col md={3} xs={6}>
+        <CounterBox end={10} suffix="+" />
+        <p>Years Experience</p>
+      </Col>
+
+      <Col md={3} xs={6}>
+        <CounterBox end={5000} suffix="+" />
+        <p>Happy Clients</p>
+      </Col>
+
+      <Col md={3} xs={6}>
+        <CounterBox end={15} suffix="+" />
+        <p>Professional Services</p>
+      </Col>
+
+      <Col md={3} xs={6}>
+        <CounterBox end={4.9} decimals={1} suffix="/5" />
+        <p>Average Rating</p>
+      </Col>
+
+    </Row>
+  </Container>
+</section>
 
       {/* Services */}
       <section id="services" className="services-section section-gap">
@@ -364,7 +371,7 @@ function App() {
                 from experienced professionals.
               </p>
               <Button variant="warning" size="lg">
-                Book Your Appointment
+                Book Your Appointment coming soon
               </Button>
             </Col>
           </Row>
@@ -381,9 +388,9 @@ function App() {
                 We are here to help you get the best look. Reach out to us for
                 bookings, service details, or general inquiries.
               </p>
-              <p>📍 Salem, Tamil Nadu</p>
-              <p>📞 +91 98765 43210</p>
-              <p>📧 info@misterbarber.com</p>
+              <p className="text-light">📍 Papanasam ,Kumbakonam Tk</p>
+              <p className="text-light">📞 +91 7358977551</p>
+              <p className="text-light">📧 info@misterbarber.com</p>
             </Col>
             <Col md={6} data-aos="fade-left">
               <div className="contact-box">
@@ -395,6 +402,12 @@ function App() {
             </Col>
           </Row>
         </Container>
+      </section>
+
+      <section id="Appoiment" className="Appoiment-section section-gap">
+          <div className="container">
+            <h1>hello baby ...</h1>
+          </div>
       </section>
 
       <footer className="footer-section text-center">
