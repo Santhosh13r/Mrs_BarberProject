@@ -125,7 +125,7 @@ body {
 }
 
 .stats-section {
-  background: #101010;
+  background: #242424;
 }
 
 .stats-section h2 {
@@ -135,8 +135,13 @@ body {
 }
 
 .stats-section p {
-  color: #ddd;
+  color: #eeeceb;
   margin-top: 10px;
+}
+.stats-section h1{
+ color: #e18b39;
+  font-size: 3.5rem;
+  
 }
 
 .service-img {
