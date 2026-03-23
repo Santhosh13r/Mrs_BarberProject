@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import {
   Navbar,
@@ -26,6 +26,65 @@ function App() {
       easing: "ease-in-out",
     });
   }, []);
+
+ // Scroll visibility
+  const [statsVisible, setStatsVisible] = useState(false);
+
+  //Counts state
+  const [counts, setCounts] = useState({
+  exp: 0,
+  clients: 0,
+  services: 0,
+  rating: 0,
+});
+
+ // Animate function
+  const animateCount = (key, end, duration = 2000) => {
+    let start = 0;
+    const intervalTime = 20;
+    const steps = duration / intervalTime;
+
+    const timer = setInterval(() => {
+      start++;
+      setCounts((prev) => {
+        let value;
+        if (key === "rating") {
+          value = Math.min(Math.round((start / steps) * end * 10) / 10, end);
+        } else {
+          value = Math.min(Math.floor((start / steps) * end), end);
+        }
+        return { ...prev, [key]: value };
+      });
+      if (start >= steps) clearInterval(timer);
+    }, intervalTime);
+  };
+
+  // Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const statsSection = document.querySelector(".stats-section");
+      if (!statsSection || statsVisible) return;
+
+      const top = statsSection.getBoundingClientRect().top;
+      if (top < window.innerHeight) setStatsVisible(true);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // in case already visible
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [statsVisible]);
+
+   // Start animation when visible
+  useEffect(() => {
+    if (statsVisible) {
+      animateCount("exp", 10);
+      animateCount("clients", 5000);
+      animateCount("services", 15);
+      animateCount("rating", 4.9);
+    }
+  }, [statsVisible]);
+
+
 
   const services = [
     {
@@ -136,7 +195,8 @@ function App() {
       <section id="about" className="about-section section-gap">
         <Container>
           <Row className="align-items-center">
-            <Col lg={6} data-aos="zoom-in">
+            
+            <Col lg={6} className="text-center d-flex justify-content-center" data-aos="zoom-in">
               <img src={AboutImg} alt="About MisterBarber" className="about-image img-fluid" />
             </Col>
             <Col lg={6} data-aos="fade-up">
@@ -218,22 +278,22 @@ function App() {
     <Row className="text-center">
 
       <Col md={3} xs={6}>
-        {/* <CountUp end={10} duration={3} /> */} <h1>10+</h1>
+        {/* <CountUp end={10} duration={3} /> */} <h1>{counts.exp}+</h1>
         <p>Years Experience</p>
       </Col>
 
       <Col md={3} xs={6}>
-        {/* <CountUp end={5000} duration={3} /> */} <h1>5,000+</h1>
+        {/* <CountUp end={5000} duration={3} /> */} <h1>{counts.clients.toLocaleString()}+</h1>
         <p>Happy Clients</p>
       </Col>
 
       <Col md={3} xs={6}>
-        {/* <CountUp end={15}  duration={3}/> */} <h1>15+</h1>
+        {/* <CountUp end={15}  duration={3}/> */} <h1>{counts.services}+</h1>
         <p>Professional Services</p>
       </Col>
 
       <Col md={3} xs={6}>
-        {/* <CountUp end={4.9} decimals={1} duration={3} /> */} <h1>4.9/5</h1>
+        {/* <CountUp end={4.9} decimals={1} duration={3} /> */} <h1>{counts.rating}/5</h1>
         <p>Average Rating</p>
       </Col>
 
